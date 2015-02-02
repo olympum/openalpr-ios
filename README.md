@@ -27,7 +27,7 @@ The basic steps to getting openalpr configured on XCode are:
 
 - From the top level `openalpr-ios` git folder, run the `sync_openalpr_source.sh` script, passing the path to whereyou cloned openalpr:
   ```
-  # ./bin/sync_openalpr_source.sh ~/work/lp/openalpr
+  # ./bin/sync_from_openalpr_source.sh ~/work/lp/openalpr
   ```
  This script will do the following:
    - Copy openalpr sources and headers to `openalpr-ios/openalpr-xcode/openalpr`, for use by the XCode project.

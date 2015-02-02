@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C4AB01AEA365D30631E68D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D406727CD4102279002641 /* libPods.a */; };
 		FA4952E51A13D9CB0024583F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA49526E1A13D9CB0024583F /* main.cpp */; };
 		FA4952E61A13D9CB0024583F /* alpr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4952701A13D9CB0024583F /* alpr.cpp */; };
 		FA4952E71A13D9CB0024583F /* alpr_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4952721A13D9CB0024583F /* alpr_impl.cpp */; };
@@ -215,6 +216,7 @@
 			files = (
 				FAB4896D1A099D590035DD91 /* liblept.a in Frameworks */,
 				FAB4896E1A099D590035DD91 /* libtesseract.a in Frameworks */,
+				4C4AB01AEA365D30631E68D6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +816,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/Moto1/work/ios/openalpr-ios/work/dependencies/lib",
+					"\"$(PROJECT_DIR)/../work/dependencies/lib/\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -858,7 +860,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/Moto1/work/ios/openalpr-ios/work/dependencies/lib",
+					"\"$(PROJECT_DIR)/../work/dependencies/lib/\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

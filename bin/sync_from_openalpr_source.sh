@@ -3,7 +3,7 @@
 trap "echo 'error with last command. exiting.' && exit 1" ERR
 trap "echo 'user interrupted.' && exit 1" INT
 
-OPENALPR_SRC_DIR="$HOME/work/lp/openalpr-t17"
+#OPENALPR_SRC_DIR="$HOME/work/lp/openalpr-t17"
 
 WORK_DIR=`pwd`/work
 GLOBAL_OUTDIR="$WORK_DIR/dependencies"
@@ -29,7 +29,7 @@ if [ ! -d "$OPENALPR_SRC_DIR" ]; then
 fi
 
 if [ ! -d "$TARGET_DIR" ]; then 
-  mkdir $TARGET_DIR
+  mkdir -p $TARGET_DIR
 fi
 
 # copy sources for openalpr xcode project
@@ -51,14 +51,14 @@ rsync -av $@ $OPENALPR_SRC_DIR/src/ \
 
 # copy headers for consuming xcode project
 
-#echo "Copying stub version.h file."
+echo "Copying stub version.h file."
 
-#cp etc/version.h $TARGET_DIR/openalpr/
+cp etc/version.h $TARGET_DIR/openalpr/
 
 echo "Copying headers to $INCLUDE_DIR"
 
 if [ ! -d "$INCLUDE_DIR" ]; then 
-  mkdir $INCLUDE_DIR
+  mkdir -p $INCLUDE_DIR
 fi
 
 rsync -av $@ $OPENALPR_SRC_DIR/src/ \
