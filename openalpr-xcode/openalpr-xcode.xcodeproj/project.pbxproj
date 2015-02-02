@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C4AB01AEA365D30631E68D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D406727CD4102279002641 /* libPods.a */; };
-		5BEEE97A1A7F9B3400BD0228 /* runtime_data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BEEE9791A7F9B3400BD0228 /* runtime_data */; };
 		5BEEE97C1A7F9BB700BD0228 /* runtime_data in Resources */ = {isa = PBXBuildFile; fileRef = 5BEEE97B1A7F9BB700BD0228 /* runtime_data */; };
 		FA4952E51A13D9CB0024583F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA49526E1A13D9CB0024583F /* main.cpp */; };
 		FA4952E61A13D9CB0024583F /* alpr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4952701A13D9CB0024583F /* alpr.cpp */; };
@@ -83,7 +82,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				5BEEE97A1A7F9B3400BD0228 /* runtime_data in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +151,6 @@
 		5BEEE9751A7F9B0200BD0228 /* us.patterns */ = {isa = PBXFileReference; lastKnownFileType = text; path = us.patterns; sourceTree = "<group>"; };
 		5BEEE9771A7F9B0200BD0228 /* eu.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = eu.xml; sourceTree = "<group>"; };
 		5BEEE9781A7F9B0200BD0228 /* us.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = us.xml; sourceTree = "<group>"; };
-		5BEEE9791A7F9B3400BD0228 /* runtime_data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = runtime_data; path = ../work/dependencies/share/openalpr/runtime_data; sourceTree = "<group>"; };
 		5BEEE97B1A7F9BB700BD0228 /* runtime_data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = runtime_data; path = ../work/dependencies/share/openalpr/runtime_data; sourceTree = "<group>"; };
 		8FFE46B7AE08A9C34602D645 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E3E89CB94A797CFD88CE485D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -635,7 +632,6 @@
 		FA56C77A1A093A4B0055CAE4 = {
 			isa = PBXGroup;
 			children = (
-				5BEEE9791A7F9B3400BD0228 /* runtime_data */,
 				5BEEE9321A7F9B0200BD0228 /* runtime_data */,
 				FAB4887E1A095D090035DD91 /* Resources */,
 				FA56C7851A093A4B0055CAE4 /* openalpr-xcode */,
@@ -891,7 +887,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
+					i386,
 					x86_64,
+					arm64,
+					arm7s,
+					arm7,
 				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -930,7 +930,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
 		};
@@ -940,7 +940,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
+					i386,
 					x86_64,
+					arm64,
+					arm7s,
+					arm7,
 				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -973,7 +977,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Release;
 		};
@@ -981,10 +985,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3E89CB94A797CFD88CE485D /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/OpenCV\"",
@@ -1013,11 +1014,11 @@
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../work/dependencies/lib/\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1025,10 +1026,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FFE46B7AE08A9C34602D645 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/OpenCV\"",
@@ -1060,7 +1058,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
